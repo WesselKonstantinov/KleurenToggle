@@ -1,0 +1,90 @@
+@import 'constants';
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: $color-grey;
+
+    &--red {
+        background-color: $color-red;
+    }
+
+    &--orange {
+        background-color: $color-orange;
+    }
+
+    &--purple {
+        background-color: $color-purple;
+    }
+
+    &--green {
+        background-color: $color-green;
+    }
+}
+
+/* Navigation menu styles */
+.nav {
+    display: inline-block;
+    position: relative;
+    height: 54px;
+
+    &__toggle-menu[open] &__icon-container::before {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        cursor: default;
+    }
+
+    &__icon-container {
+        cursor: pointer;
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__icon {
+        width: 50px;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        width: 280px;
+        background-color: $color-grey;
+    }
+
+    &__item {
+        padding: 20px;
+        margin: 2px;
+        cursor: pointer;
+
+        &--red {
+            background-color: $color-red;
+        }
+
+        &--orange {
+            background-color: $color-orange;
+        }
+
+        &--purple {
+            background-color: $color-purple;
+        }
+
+        &--green {
+            background-color: $color-green;
+        }
+    }
+
+    &__link {
+        color: $color-black;
+        text-decoration: none;
+    }
+}
