@@ -6,7 +6,7 @@
           box-sizing: border-box;
 }
 
-.body {
+.body--grey {
   background-color: #ccc;
 }
 
@@ -59,13 +59,17 @@
   list-style: none;
   position: absolute;
   width: 280px;
-  background-color: #ccc;
 }
 
 .nav__item {
   padding: 20px;
   margin: 2px;
   cursor: pointer;
+  border: 1px solid #000;
+}
+
+.nav__item--grey {
+  background-color: #ccc;
 }
 
 .nav__item--red {

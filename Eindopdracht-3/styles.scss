@@ -8,8 +8,10 @@
 }
 
 .body {
-    background-color: $color-grey;
-
+    &--grey {
+        background-color: $color-grey;
+    }
+    
     &--red {
         background-color: $color-red;
     }
@@ -58,13 +60,17 @@
         list-style: none;
         position: absolute;
         width: 280px;
-        background-color: $color-grey;
     }
 
     &__item {
         padding: 20px;
         margin: 2px;
         cursor: pointer;
+        border: 1px solid $color-black;
+
+        &--grey {
+            background-color: $color-grey;
+        }
 
         &--red {
             background-color: $color-red;
