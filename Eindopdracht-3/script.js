@@ -1,53 +1,33 @@
-// Sla de body, het toggle menu en de nav-items op in een variabele
-const body = document.querySelector('.body');
+// Define a function that closes the menu
 const toggleMenu = document.querySelector('.nav__toggle-menu');
+const closeMenu = () => toggleMenu.removeAttribute('open');
+
+/*
+    Define a function that extracts and returns the color name
+    from the second class present on an element (e.g. nav__item--red)
+*/
+const getColorName = element => {
+    const colorClass = element.classList[1];
+    const colorName = colorClass.slice(11);
+    return colorName;
+};
+
+/*
+    Define a function that changes the background color of the whole page
+    by replacing the second class (e.g. body--green)
+*/
+const body = document.querySelector('.body');
+const changeBackgroundColor = (e) => {
+    const color = getColorName(e.target);
+    const colorClass = `body--${color}`;
+    body.classList.replace(body.classList[1], colorClass);
+}
+
+// Attach an event listener to each nav item
 const navItems = document.querySelectorAll('.nav__item');
-
-// Definieer functies die de achtergrondkleur veranderen
-const changeBackgroundColorToGrey = () => {
-    body.classList.remove('body--red', 'body--purple', 'body--orange', 'body--green');
-};
-
-const changeBackgroundColorToRed = () => {
-    body.classList.add('body--red');
-    body.classList.remove('body--purple', 'body--orange', 'body--green');
-};
-
-const changeBackgroundColorToOrange = () => {
-    body.classList.add('body--orange');
-    body.classList.remove('body--red', 'body--purple', 'body--green');
-};
-
-const changeBackgroundColorToPurple = () => {
-    body.classList.add('body--purple');
-    body.classList.remove('body--red', 'body--orange', 'body--green');
-};
-
-const changeBackgroundColorToGreen = () => {
-    body.classList.add('body--green');
-    body.classList.remove('body--red', 'body--orange', 'body--purple');
-};
-
-// Definieer een functie die het toggle menu sluit 
-const foldMenu = () => toggleMenu.removeAttribute('open');
-
-// Voeg een event listener toe aan alle nav-items
 navItems.forEach(navItem => {
-    navItem.addEventListener('click', () => {
-        // Bij een klik verandert de achtergrondkleur naar de kleur in kwestie
-        if (navItem.classList.contains('nav__item--grey')) {
-            changeBackgroundColorToGrey();
-        } else if (navItem.classList.contains('nav__item--red')) {
-            changeBackgroundColorToRed();
-        } else if (navItem.classList.contains('nav__item--orange')) {
-            changeBackgroundColorToOrange();
-        } else if (navItem.classList.contains('nav__item--purple')) {
-            changeBackgroundColorToPurple();
-        } else if (navItem.classList.contains('nav__item--green')) {
-            changeBackgroundColorToGreen();
-        };
-
-        // Ook klapt het menu weer dicht
-        foldMenu();
+    navItem.addEventListener('click', (e) => {
+        changeBackgroundColor(e);
+        closeMenu();
     });
 });
