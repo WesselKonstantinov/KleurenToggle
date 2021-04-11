@@ -2,26 +2,21 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .body--grey {
   background-color: #ccc;
 }
-
 .body--red {
   background-color: #f00;
 }
-
 .body--orange {
   background-color: #ffa500;
 }
-
 .body--purple {
   background-color: #800080;
 }
-
 .body--green {
   background-color: #038d03;
 }
@@ -32,7 +27,6 @@
   position: relative;
   height: 54px;
 }
-
 .nav__toggle-menu[open] .nav__icon-container::before {
   position: fixed;
   top: 0;
@@ -42,54 +36,40 @@
   content: "";
   cursor: default;
 }
-
 .nav__icon-container {
   cursor: pointer;
+  list-style: none;
 }
-
-.nav__icon-container::-webkit-details-marker {
-  display: none;
-}
-
 .nav__icon {
   width: 50px;
 }
-
 .nav__list {
   list-style: none;
   position: absolute;
   width: 280px;
 }
-
 .nav__item {
   padding: 20px;
   margin: 2px;
   cursor: pointer;
   border: 1px solid #000;
 }
-
 .nav__item--grey {
   background-color: #ccc;
 }
-
 .nav__item--red {
   background-color: #f00;
 }
-
 .nav__item--orange {
   background-color: #ffa500;
 }
-
 .nav__item--purple {
   background-color: #800080;
 }
-
 .nav__item--green {
   background-color: #038d03;
 }
-
 .nav__link {
   color: #000;
   text-decoration: none;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
