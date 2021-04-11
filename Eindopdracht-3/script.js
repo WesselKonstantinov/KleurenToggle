@@ -17,8 +17,8 @@ const getColorName = element => {
     by replacing the second class (e.g. body--green)
 */
 const body = document.querySelector('.body');
-const changeBackgroundColor = (e) => {
-    const color = getColorName(e.target);
+const changeBackgroundColor = (navItem) => {
+    const color = getColorName(navItem);
     const colorClass = `body--${color}`;
     body.classList.replace(body.classList[1], colorClass);
 }
@@ -27,7 +27,7 @@ const changeBackgroundColor = (e) => {
 const navItems = document.querySelectorAll('.nav__item');
 navItems.forEach(navItem => {
     navItem.addEventListener('click', (e) => {
-        changeBackgroundColor(e);
+        changeBackgroundColor(e.target);
         closeMenu();
     });
 });
