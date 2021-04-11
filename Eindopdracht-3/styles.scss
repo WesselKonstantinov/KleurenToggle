@@ -47,9 +47,7 @@
 
     &__icon-container {
         cursor: pointer;
-        &::-webkit-details-marker {
-            display: none;
-        }
+        list-style: none;
     }
 
     &__icon {
